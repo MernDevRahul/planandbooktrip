@@ -32,7 +32,7 @@ export default function MapSection() {
                   <h3>Mauritius
                   </h3>
                   <p>
-                  Escape to the stunning beaches, crystal-clear waters, and lush landscapes of Mauritius with JivYuv’s exclusive Mauritius holiday packages. All vacation tastes come together in Mauritius where you can have either a love-struck honeymoon or an extravagance trip or an action-packed journey.
+                  Escape to the stunning beaches, crystal-clear waters, and lush landscapes of Mauritius with Plan and Book Trip's exclusive Mauritius holiday packages. All vacation tastes come together in Mauritius where you can have either a love-struck honeymoon or an extravagance trip or an action-packed journey.
                   </p>
                 </div>
               </div>
@@ -49,7 +49,7 @@ export default function MapSection() {
                 <div className="address-box">
                   <h3>Europe</h3>
                   <p>
-                  Discover the charm, history, and breathtaking landscapes of Europe with JivYuv’s exclusive Europe tour packages.  There are various places to visit in Europe with beautiful countryside that suits various types of travelers and their preferences.
+                  Discover the charm, history, and breathtaking landscapes of Europe with Plan and Book Trip’s exclusive Europe tour packages.  There are various places to visit in Europe with beautiful countryside that suits various types of travelers and their preferences.
                   </p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function MapSection() {
                 <div className="address-box">
                   <h3>Vietnam</h3>
                   <p>
-                  Discover the beauty of Vietnam with JivYuv’s exclusive Vietnam tour packages. Every carefully planned package from JivYuv permits you to experience a remarkable exploration of Vietnam regardless of which aspects attract you the most.
+                  Discover the beauty of Vietnam with Plan and Book Trip’s exclusive Vietnam tour packages. Every carefully planned package from Plan and Book Trip permits you to experience a remarkable exploration of Vietnam regardless of which aspects attract you the most.
 
                   </p>
                 </div>

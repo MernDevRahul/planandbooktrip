@@ -12,8 +12,8 @@ export default function Feature() {
       <section className="feature-section centred bg-color-1 sec-pad">
         <div className="auto-container">
           <div className="sec-title text-center">
-            <p>JivYuv Specials</p>
-            <h2>Why Travel with JivYuv?
+            <p>Plan and Book Trip Specials</p>
+            <h2>Why Travel with Plan and Book Trip?
             </h2>
           </div>
           <div className="row clearfix">

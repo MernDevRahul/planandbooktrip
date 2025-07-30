@@ -20,7 +20,7 @@ export default function NewsSection({ packageData = [] }) {
         <div className="auto-container">
           <div className="sec-title">
             <p>Upcoming Events</p>
-            <h2>Stay Updated with JivYuv's Latest Events</h2>
+            <h2>Stay Updated with Plan and Book Trip's Latest Events</h2>
             <Link href="/trips" className="theme-btn-two">
               Upcoming Events
             </Link>

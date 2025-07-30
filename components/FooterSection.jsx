@@ -339,7 +339,7 @@ export default function Footer() {
             <div className="bottom-inner clearfix">
               <div className="copyright pull-left">
                 <p>
-                  <Link href="/">JivYuv</Link> &copy; 2025 All Rights Reserved
+                  <Link href="/">Plan and Book Trip</Link> &copy; 2025 All Rights Reserved
                 </p>
               </div>
               <ul className="footer-nav pull-right">

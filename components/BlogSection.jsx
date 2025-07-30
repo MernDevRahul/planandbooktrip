@@ -17,7 +17,7 @@ export default function BlogSection({ blogs = [] }) {
         ></div>
         <div className="auto-container">
           <div className="sec-title">
-            <p>Stay updated with Jivyuv</p>
+            <p>Stay updated with Plan and Book Trip</p>
             <h2>Explore Our Latest Blogs</h2>
           </div>
           <div className="row clearfix">

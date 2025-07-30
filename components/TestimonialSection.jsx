@@ -8,7 +8,7 @@ export default function TestimonialSection() {
         <div className="auto-container">
           <div className="sec-title centred">
             <p>Review & Testimonials</p>
-            <h2>Top Reviews for JivYuv</h2>
+            <h2>Top Reviews for Plan and Book Trip</h2>
           </div>
           <div className="three-item-carousel owl-carousel owl-theme owl-nav-none">
             <div className="testimonial-block-one">
