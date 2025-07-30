@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS and remove www
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # Optional: force to specific domain
+  # RewriteCond %{HTTPS} off [OR]
+  # RewriteCond %{HTTP_HOST} !^yourdomain\.com$ [NC]
+  # RewriteRule ^ https://yourdomain.com%{REQUEST_URI} [L,R=301]
+
+  # Serve static files and Next.js SSR routes properly
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [QSA,L]
+
+  # MIME types (optional, usually handled by server)
+  AddType application/javascript .js
+  AddType text/css .css
+</IfModule>

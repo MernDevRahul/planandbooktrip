@@ -1,0 +1,43 @@
+/* Privacy.css */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 24px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e40af;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-top: 24px;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 4px;
+}
+
+.paragraph {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.list {
+    list-style-type: disc;
+    margin-left: 24px;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.list li {
+    margin-bottom: 8px;
+}

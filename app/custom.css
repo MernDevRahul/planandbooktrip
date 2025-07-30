@@ -1,0 +1,60 @@
+.register-section .inner-box .form-inner .social-links li a {
+  width: 470px;
+}
+
+.register-section .inner-box .form-inner .social-links li a:hover {
+  width: 470px;
+}
+
+.register-section .social-links svg {
+  width: 36px;
+  height: 36px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.register-section .inner-box .form-inner .social-links li a span {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* style.css | http://localhost:3000/assets/css/style.css */
+
+.register-section .inner-box .form-inner .social-links li a span {
+  /* color: #ffffff; */
+  position: relative;
+  color: #000;
+}
+
+.register-section .inner-box .form-inner .social-links li a:hover span {
+  /* color: #ffffff; */
+  position: relative;
+  color: #000;
+}
+
+/* layout.css | http://localhost:3000/_next/static/css/app/layout.css?v=1738994148785 */
+
+.register-section .social-links svg {
+  /* width: 36px; */
+  /* height: 36px; */
+  width: 24px;
+  height: 26px;
+}
+
+/* style.css | http://localhost:3000/assets/css/style.css */
+
+.image_block_1 .image-box .video-content .video-btn a svg {
+  height: 80px !important;
+  width: 80px !important;
+}
+
+/* Element | http://localhost:3000/ */
+
+div.video-btn:nth-child(3) > a:nth-child(1) > svg:nth-child(1) {
+  transform: translateY(-5px);
+}
+
+
+img.gallary-img {
+  height: 400px !important;
+}
