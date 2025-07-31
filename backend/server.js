@@ -15,7 +15,7 @@ const PORT = 5005;
 const routes = require("./routes/allRoutes/allRoutes");
 const reviewRoutes = require("./routes/reviewRoutes/reviewRoutes");
 // Allowed Origins
-const allowedOrigins = ["https://accounts.google.com","https://planandbooktrip.com/","https://backend.planandbooktrip.com/","https://planandbooktrip.com","https://backend.planandbooktrip.com","https://panel.planandbooktrip.com","https://panel.planandbooktrip.com/","http://localhost:3000","http://localhost:3005","http://localhost:5173"]
+const allowedOrigins = ["https://accounts.google.com","https://www.planandbooktrip.com","https://planandbooktrip.com/","https://backend.planandbooktrip.com/","https://planandbooktrip.com","https://backend.planandbooktrip.com","https://panel.planandbooktrip.com","https://panel.planandbooktrip.com/","http://localhost:3000","http://localhost:3005","http://localhost:5173"]
 
 const corsOptions = {
   origin: function (origin, callback) {
