@@ -122,7 +122,7 @@ const BlogDetails = ({ params }) => {
         <div className="auto-container">
           <div className="content-box">
             <h1>{blog.blogTitle}</h1>
-            <p>{blog.blogTag}</p>
+            {/* <p>{blog.blogTag}</p> */}
           </div>
         </div>
       </section>
@@ -138,7 +138,7 @@ const BlogDetails = ({ params }) => {
                   <div className="inner-box">
                     <div className="lower-content">
                       <div className="category">
-                        <Link href="#">{blog.blogTag}</Link>
+                        {/* <Link href="#">{blog.blogTag}</Link> */}
                       </div>
                       <h2>{blog.blogTitle}</h2>
                       <ul className="post-info clearfix">
@@ -327,14 +327,27 @@ const BlogDetails = ({ params }) => {
                   </div>
 
                 </div>
-
-                <div className="advice-widget">
+                <div className="advice-widget"
+                      style={{}}
+                    >
+                      <div className="inner-box" style={{backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", // Safari support
+                        width:"100%", height:"100%",
+                        display:"flex", alignItems:"center",
+                        justifyContent:"center"
+                      }}>
+                      <div className="text"
+                       >
+                        <h2>Get <br /> 25% Off <br /> On New York Tours</h2>
+                      </div>
+                      </div>
+                    </div>
+                {/* <div className="advice-widget">
                   <div className="inner-box" style={{ backgroundImage: 'url(/assets/images/resource/advice-1.jpg)' }}>
                     <div className="text">
                       <h2>Get <br />25% Off <br />On New York Tours</h2>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

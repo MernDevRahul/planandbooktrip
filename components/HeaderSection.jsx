@@ -1,8 +1,8 @@
 "use client";
-import {useContext} from "react";
+import { useContext } from "react";
 import { checkSession } from "../app/uitls/authFunctions";
 
-import { LucideSearch, LucideUserRound,Search } from "lucide-react";
+import { LucideSearch, LucideUserRound, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
@@ -11,10 +11,10 @@ import axios from "axios";
 
 import Swal from "sweetalert2";
 import Preloader from "./Preloader";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 import { seoContextObj } from "../app/layout";
 export default function Header() {
-  let {categories, companyData,packageData}=useContext(seoContextObj);
+  let { categories, companyData, packageData } = useContext(seoContextObj);
 
   const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
   const [user, setUser] = useState(null);
@@ -23,14 +23,12 @@ export default function Header() {
 
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchToggle,setSearchToggle]=useState(false);
+  const [searchToggle, setSearchToggle] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false);
-  const router=useRouter();
+  const router = useRouter();
   const searchRef = useRef(null);
-
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -43,19 +41,16 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
-
-
   useEffect(() => {
     const fetchSession = async () => {
       const sessionUser = await checkSession();
-     
+
       setUser(sessionUser);
     };
 
     fetchSession();
   }, []);
-  function handleSearch(){
+  function handleSearch() {
     setSearchToggle(!searchToggle);
   }
 
@@ -63,17 +58,16 @@ export default function Header() {
     try {
       localStorage.removeItem("token");
       window.location.href = `${SERVER_URL}/api/auth/logout`; // Redirect to logout
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const openPanel=()=>{
+  const openPanel = () => {
     setIsPanelOpen(!isPanelOpen);
-  }
+  };
 
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
@@ -93,33 +87,26 @@ export default function Header() {
     overflowY: "auto",
   };
 
-
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (searchQuery.trim().length > 3) {
-        
-       
-        
-          const response =packageData;
-          setSuggestions(response);
-        } 
-       
-      
+        const response = packageData;
+        setSuggestions(response);
+      }
     };
 
     const debounceTimer = setTimeout(fetchSuggestions, 300);
     return () => clearTimeout(debounceTimer);
   }, [searchQuery]);
 
- // Handle suggestion click
- const handleSuggestionClick = (suggestion) => {
-  setSearchQuery("");
-  setSuggestions([]);
-  setSearchToggle(false);
-  // Navigate to suggested item's page
-  router.push(`/trip/${suggestion.titleSlug}`); // You'll need to use next/router
-};
-
+  // Handle suggestion click
+  const handleSuggestionClick = (suggestion) => {
+    setSearchQuery("");
+    setSuggestions([]);
+    setSearchToggle(false);
+    // Navigate to suggested item's page
+    router.push(`/trip/${suggestion.titleSlug}`); // You'll need to use next/router
+  };
 
   return (
     <>
@@ -151,7 +138,7 @@ export default function Header() {
                               width="200"
                               height="100"
                             />
-                      </Link>
+                          </Link>
                         </figure>
                       </div>
                       <div className="menu-area clearfix">
@@ -180,46 +167,48 @@ export default function Header() {
                                 </Link>
                               </li>
 
-
-                              {categories && categories.map((category, index) => {
-                                return (
-                                  category.isVisibleOnNavbar && (
-                                    <li
-                                      key={`category-${index}`} // Add unique key
-                                      className={`dropdown ${
-                                        activeDropdown === index + 1
-                                          ? "open"
-                                          : ""
-                                      }`}
-                                    >
-                                      <Link
-                                       href={`/${category.slugName}`}
-                                        style={{ color: "grey" }}
-                                        onClick={() =>
-                                          toggleDropdown(index + 1)
-                                        }
+                              {categories &&
+                                categories.map((category, index) => {
+                                  return (
+                                    category.isVisibleOnNavbar && (
+                                      <li
+                                        key={`category-${index}`} // Add unique key
+                                        className={`dropdown ${
+                                          activeDropdown === index + 1
+                                            ? "open"
+                                            : ""
+                                        }`}
                                       >
-                                        {category.name}
-                                      </Link>
-                                      {category.subCategoryId.length > 0 && (
-                                        <ul>
-                                          {category.subCategoryId.map(
-                                            (subCategory, subIndex) => (
-                                              <li
-                                                key={`subcategory-${subIndex}`} // Add unique key
-                                              >
-                                                <Link href={`/${category.slugName}/${subCategory.slugName}`}>
-                                                  {subCategory.name}
-                                                </Link>
-                                              </li>
-                                            )
-                                          )}
-                                        </ul>
-                                      )}
-                                    </li>
-                                  )
-                                );
-                              })}
+                                        <Link
+                                          href={`/${category.slugName}`}
+                                          style={{ color: "grey" }}
+                                          onClick={() =>
+                                            toggleDropdown(index + 1)
+                                          }
+                                        >
+                                          {category.name}
+                                        </Link>
+                                        {category.subCategoryId.length > 0 && (
+                                          <ul>
+                                            {category.subCategoryId.map(
+                                              (subCategory, subIndex) => (
+                                                <li
+                                                  key={`subcategory-${subIndex}`} // Add unique key
+                                                >
+                                                  <Link
+                                                    href={`/${category.slugName}/${subCategory.slugName}`}
+                                                  >
+                                                    {subCategory.name}
+                                                  </Link>
+                                                </li>
+                                              )
+                                            )}
+                                          </ul>
+                                        )}
+                                      </li>
+                                    )
+                                  );
+                                })}
                               <li
                                 className={`dropdown ${
                                   activeDropdown === 3 ? "open" : ""
@@ -230,16 +219,14 @@ export default function Header() {
                                   style={{ color: "grey" }}
                                   onClick={() => toggleDropdown(3)}
                                 >
-                                 About Us
+                                  About Us
                                 </Link>
-                            
                               </li>
-                              
+
                               <li className="dropdown">
                                 <Link href="/blogs" style={{ color: "grey" }}>
                                   Blog
                                 </Link>
-                             
                               </li>
                             </ul>
                           </div>
@@ -247,7 +234,11 @@ export default function Header() {
                       </div>
                       <ul className="menu-right-content clearfix">
                         <li className="search-box-outer" ref={searchRef}>
-                          <div className={`dropdown ${searchToggle===true && "show"}`}>
+                          <div
+                            className={`dropdown ${
+                              searchToggle === true && "show"
+                            }`}
+                          >
                             <button
                               className="search-box-btn"
                               type="button"
@@ -255,81 +246,97 @@ export default function Header() {
                               data-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded={`${searchToggle}`}
-                             onClick={handleSearch}>
+                              onClick={handleSearch}
+                            >
                               <LucideSearch />
                             </button>
                             <div
                               className="dropdown-menu search-panel"
                               aria-labelledby="dropdownMenu3"
-                            style={
-                              {width:"800px"}
-                              
-                            }>
-                             
-                              
+                              style={{ width: "800px" }}
+                            >
                               <div className="form-container">
-    <form method="post" action="/search">
-      <div className="form-group" style={{ position: "relative",width:"750px" }}>
-        <input
-          type="search"
-          name="search-field"
-          placeholder="Search...."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault(); // Prevent form submission
-            }
-          }}
-          required
-          style={{
-            width: "100%",
-            padding: "12px 20px", 
-            fontSize: "16px",
-            height:"6ch"      
-          }}
-        />
+                                <form method="post" action="/search">
+                                  <div
+                                    className="form-group"
+                                    style={{
+                                      position: "relative",
+                                      width: "750px",
+                                    }}
+                                  >
+                                    <input
+                                      type="search"
+                                      name="search-field"
+                                      placeholder="Search...."
+                                      value={searchQuery}
+                                      onChange={(e) =>
+                                        setSearchQuery(e.target.value)
+                                      }
+                                      onKeyDown={(e) => {
+                                        if (e.key === "Enter") {
+                                          e.preventDefault(); // Prevent form submission
+                                        }
+                                      }}
+                                      required
+                                      style={{
+                                        width: "100%",
+                                        padding: "12px 20px",
+                                        fontSize: "16px",
+                                        height: "6ch",
+                                      }}
+                                    />
 
-        
-        {/* Suggestions dropdown */}
-        {searchQuery && (
-          <div  style={{
-            ...suggestionStyles,
-            width: "100%",          
-            maxHeight: "400px",     
-            fontSize: "14px"       
-          }}>
-            {isLoadingSuggestions ? (
-              <div className="p-2 text-muted">Loading suggestions...</div>
-            ) : suggestions.length > 0 ? (
-              suggestions.map((suggestion) => (
-                <div
-                  key={suggestion.id}
-                  className="suggestion-item p-3 hover-bg-gray-100 cursor-pointer"
-                  onClick={() => handleSuggestionClick(suggestion)}
-                  style={{ borderBottom: "1px solid #eee",cursor:"pointer" }} 
-                >
-                  {suggestion.title}
-                  
-
-
-                  
-                </div>
-              ))
-            ) : (
-              <div className="p-2 text-muted">No suggestions found</div>
-            )}
-          </div>
-        )}
-      </div>
-    </form>
-  </div>
-
-
-
-
-
-
+                                    {/* Suggestions dropdown */}
+                                    {searchQuery && (
+                                      <div
+                                        style={{
+                                          ...suggestionStyles,
+                                          width: "100%",
+                                          maxHeight: "400px",
+                                          fontSize: "14px",
+                                        }}
+                                      >
+                                        {isLoadingSuggestions ? (
+                                          <div className="p-2 text-muted">
+                                            Loading suggestions...
+                                          </div>
+                                        ) : suggestions.length > 0 ? (
+                                          suggestions
+                                            .filter((suggestion) =>
+                                              suggestion.title
+                                                .toLowerCase()
+                                                .includes(
+                                                  searchQuery.toLowerCase()
+                                                )
+                                            )
+                                            .map((suggestion) => (
+                                              <div
+                                                key={suggestion.id}
+                                                className="suggestion-item p-3 hover-bg-gray-100 cursor-pointer"
+                                                onClick={() =>
+                                                  handleSuggestionClick(
+                                                    suggestion
+                                                  )
+                                                }
+                                                style={{
+                                                  borderBottom:
+                                                    "1px solid #eee",
+                                                  cursor: "pointer",
+                                                }}
+                                              >
+                                                {suggestion.title}
+                                              </div>
+                                            ))
+                                        ) : (
+                                          <div className="p-2 text-muted">
+                                            No suggestions found
+                                          </div>
+                                        )}
+                                      </div>
+                                    )}
+                                  </div>
+                                </form>
+                              </div>
                             </div>
                           </div>
                         </li>
@@ -352,7 +359,24 @@ export default function Header() {
                           )}
                         </li>
 
-                        {isPanelOpen ? <div onClick={handleLogout} style={{color:'white',marginRight:'end',textAlign:'center',backgroundColor:'#ff7c5b',zIndex:'1000', marginTop:'15px', borderRadius:'2px 2px 2px 2px'}}>Logout</div> : ""}
+                        {isPanelOpen ? (
+                          <div
+                            onClick={handleLogout}
+                            style={{
+                              color: "white",
+                              marginRight: "end",
+                              textAlign: "center",
+                              backgroundColor: "#ff7c5b",
+                              zIndex: "1000",
+                              marginTop: "15px",
+                              borderRadius: "2px 2px 2px 2px",
+                            }}
+                          >
+                            Logout
+                          </div>
+                        ) : (
+                          ""
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -427,9 +451,9 @@ export default function Header() {
               </header>
 
               <MobileMenu
-              user={user}
-              handleLogout={handleLogout}
-              companyData={companyData}
+                user={user}
+                handleLogout={handleLogout}
+                companyData={companyData}
                 isMobileMenuOpen={isMobileMenuOpen}
                 toggleMobileMenu={toggleMobileMenu}
                 categories={categories}

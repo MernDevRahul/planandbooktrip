@@ -275,9 +275,17 @@
 .default-sidebar .post-widget .post h4 a:hover{
   color: #ff7c5b;
 }
-
-.default-sidebar .advice-widget .inner-box:before{
-	background: #ff7c5b;
+.inner-box:before{
+	/* background: #ff7c5b; */
+}
+.advice-widget{
+	border-radius:15px;
+	background: url(/assets/images/resource/about.webp);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+	/* background: #ff7c5b; */
 }
 
 .tours-page-section .item-shorting .right-column .menu-box button.on{
@@ -316,7 +324,7 @@
 	color: #ff7c5b;
 }
 
-.tour-details-content .inner-box .text .info-list li i{
+.tour-details-content .inner-box .text .info-list li{
 	color: #ff7c5b;
 }
 

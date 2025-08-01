@@ -645,13 +645,26 @@ useEffect(() => {
                                 </div>
                             </div> */}
                            
-                            <div class="advice-widget">
+                           <div className="advice-widget"
+                    >
+                      <div className="inner-box" style={{backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", // Safari support
+                        width:"100%", height:"100%",
+                        display:"flex", alignItems:"center",
+                        justifyContent:"center"
+                      }}>
+                      <div className="text"
+                       >
+                        <h2>Get <br /> 25% Off <br /> On New York Tours</h2>
+                      </div>
+                      </div>
+                    </div>
+                            {/* <div class="advice-widget">
                                 <div class="inner-box" style={{ backgroundImage: 'url(assets/images/resource/advice-1.jpg);' }}>
                                     <div class="text">
                                         <h2>Get <br />25% Off <br />On New York Tours</h2>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

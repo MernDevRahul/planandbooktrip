@@ -214,9 +214,25 @@ export default function Footer() {
                     <ul className="info-list clearfix">
                       <li>
                         <MapPinCheckInside />{" "}
-                        {companyData?.address
-                          ? `${companyData.address.street}, ${companyData.address.city}, ${companyData.address.state}, ${companyData.address.postal_code}, ${companyData.address.country}`
-                          : "Address not available"}
+                        {
+                          companyData?.address ? (
+                            <Link
+                              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                `${companyData.address.street}, ${companyData.address.city}, ${companyData.address.state}, ${companyData.address.postal_code}, ${companyData.address.country}`
+                              )}`}
+                              target="_blank"
+                              // rel="noopener noreferrer"
+                              // style={{ textDecoration: "none", color: "inherit" }}
+                            >
+                              {`${companyData.address.street}, ${companyData.address.city}, ${companyData.address.state}, ${companyData.address.postal_code}, ${companyData.address.country}`}
+                            </Link>
+                          ) : (
+                            "Address not available"
+                          )
+                        // companyData?.address
+                        //   ? `${companyData.address.street}, ${companyData.address.city}, ${companyData.address.state}, ${companyData.address.postal_code}, ${companyData.address.country}`
+                        //   : "Address not available"
+                          }
                       </li>
                       <li>
                         <PhoneCall />&nbsp;&nbsp;
