@@ -107,12 +107,8 @@ export default function ClientContact() {
     <>
     
 
-      <section className="page-title centred" style={{ backgroundImage: 'url(/assets/img/contact/contact-banner.png)' }}>
+      <section className="page-title centred" style={{ backgroundImage: 'url(/assets/img/contact/contact-banner.webp)' }}>
         <div className="auto-container">
-          <div className="content-box">
-            <h1>Contact</h1>
-            <p>Discover your next great adventure</p>
-          </div>
         </div>
       </section>
 
