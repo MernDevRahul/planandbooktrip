@@ -37,7 +37,8 @@ export default function About() {
   return (
     <>
       <section className="page-title centred" style={{ backgroundImage: 'url(/assets/images/banner/tt.avif)' }}>
-        <div className="auto-container">
+      <div className="overlay"></div>
+        <div className="auto-container" style={{position: "relative", zIndex: 1}}>
           <div className="content-box">
             <h1>About Us</h1>
             <p>Discover your next great adventure</p>

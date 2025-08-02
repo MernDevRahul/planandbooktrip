@@ -118,14 +118,14 @@ export default function Footer() {
                         <Instagram />
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link
                         href={companyData?.social_media_links?.linkedin || "#"}
                         target="_blank"
                       >
                         <Linkedin />
                       </Link>
-                    </li>
+                    </li> */}
 
                     <li>
                       <Link

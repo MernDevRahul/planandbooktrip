@@ -185,7 +185,9 @@ export default function CategoryPage({ params }) {
               backgroundPosition: "center",
             }}
           >
-            <div class="auto-container">
+            {/* overlay */}
+            <div className="overlay"></div>
+            <div class="auto-container" style={{position: "relative", zIndex: 2}}>
               <div class="content-box">
                 <h1>Tours Details</h1>
                 <p>Discover your next great adventure</p>
@@ -879,8 +881,17 @@ export default function CategoryPage({ params }) {
                                     </ul>
                                 </div>
                             </div> */}
-
                     <div className="advice-widget">
+                      <div className="overlay1"></div>
+                      <div className="auto-container" style={{position: "relative", zIndex: 1}}>
+                        <div className="inner-box">
+                          <div className="text">
+                            <h2>Get <br />25% Off <br />On <br />New York Tours</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* <div className="advice-widget">
                       <div
                         className="inner-box"
                         style={{
@@ -899,7 +910,7 @@ export default function CategoryPage({ params }) {
                           </h2>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     {/* <div class="advice-widget">
                                 <div class="inner-box" style={{ backgroundImage: 'url(assets/images/resource/advice-1.jpg);' }}>
                                     <div class="text">

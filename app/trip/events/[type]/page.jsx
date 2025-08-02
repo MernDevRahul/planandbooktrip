@@ -644,8 +644,19 @@ useEffect(() => {
                                     </ul>
                                 </div>
                             </div> */}
+
+<div className="advice-widget">
+                      <div className="overlay1"></div>
+                      <div className="auto-container" style={{position: "relative", zIndex: 1}}>
+                        <div className="inner-box">
+                          <div className="text">
+                            <h2>Get <br />25% Off <br />On <br />New York Tours</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                            
-                           <div className="advice-widget"
+                           {/* <div className="advice-widget"
                     >
                       <div className="inner-box" style={{backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", // Safari support
                         width:"100%", height:"100%",
@@ -657,7 +668,7 @@ useEffect(() => {
                         <h2>Get <br /> 25% Off <br /> On New York Tours</h2>
                       </div>
                       </div>
-                    </div>
+                    </div> */}
                             {/* <div class="advice-widget">
                                 <div class="inner-box" style={{ backgroundImage: 'url(assets/images/resource/advice-1.jpg);' }}>
                                     <div class="text">
